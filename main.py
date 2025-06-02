@@ -15,11 +15,22 @@ def add_expense():
     print("Expense added successfully!")
     return
 
+def view_expense():
+    if expenses_list:
+        print("Your expenses:")
+        for i in range(0,len(expenses_list)):
+            print(f"{i+1}. {expenses_list[i]}")
+    else :
+        print("No expenses recorded yet.")
+    return
+
 def choose_menu_item():                 
     while True:
         selection = input()
         if selection == "1" :
             add_expense()
+        elif selection == "2" :
+            view_expense()
         elif selection == "5" :
             break
     #prints when exiting the program    
