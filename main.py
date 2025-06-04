@@ -10,12 +10,11 @@ def main_menu():
     print("4. Clear all expenses")
     print("5. Exit")
 
-def add_expense():
+def add_expense():          #option 1
     expenses_list.append(float(input()))
-    print("Expense added successfully!")
-    return
+    return print("Expense added successfully!")
 
-def view_expense():
+def view_expense():         #option 2
     if expenses_list:
         print("Your expenses:")
         for i in range(0,len(expenses_list)):
@@ -24,6 +23,14 @@ def view_expense():
         print("No expenses recorded yet.")
     return
 
+def total_and_average():    #option 3
+    if expenses_list:
+        print(f"Total expense: {sum(expenses_list)}")
+        print(f"Average expense: {(sum(expenses_list)) / (len(expenses_list))}")
+    else :
+        print("No expenses recorded yet.")
+    return
+    
 def choose_menu_item():                 
     while True:
         selection = input()
@@ -31,6 +38,8 @@ def choose_menu_item():
             add_expense()
         elif selection == "2" :
             view_expense()
+        elif selection == "3" :
+            total_and_average()
         elif selection == "5" :
             break
     #prints when exiting the program    
