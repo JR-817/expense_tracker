@@ -31,6 +31,11 @@ def total_and_average():    #option 3
         print("No expenses recorded yet.")
     return
     
+def clear_all():            #option 4
+    del expenses_list[:] 
+    print("All expenses cleared.")
+    return
+
 def choose_menu_item():                 
     while True:
         selection = input()
@@ -40,6 +45,8 @@ def choose_menu_item():
             view_expense()
         elif selection == "3" :
             total_and_average()
+        elif selection == "4" :
+            clear_all()
         elif selection == "5" :
             break
     #prints when exiting the program    
