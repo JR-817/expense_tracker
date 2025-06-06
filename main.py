@@ -39,7 +39,9 @@ def clear_all():            #option 4
 def choose_menu_item():                 
     while True:
         selection = input()
-        if selection == "1" :
+        if selection > "5" or selection < "1":
+            print("Invalid choice. Please try again.")
+        elif selection == "1" :
             add_expense()
         elif selection == "2" :
             view_expense()
